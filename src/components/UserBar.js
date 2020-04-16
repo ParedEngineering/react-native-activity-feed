@@ -1,14 +1,14 @@
-// @flow
-import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { humanizeTimestamp } from '../utils';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 
 import Avatar from './Avatar';
 import FollowButton from './FollowButton';
+// @flow
+import React from 'react';
+import type { Streami18Ctx } from '../Context';
 import type { StyleSheetLike } from '../types';
 import { buildStylesheet } from '../styles';
+import { humanizeTimestamp } from '../utils';
 import { withTranslationContext } from '../Context';
-import type { Streami18Ctx } from '../Context';
 
 type Props = {|
   username: ?string,
@@ -52,7 +52,7 @@ const UserBar = withTranslationContext(
           <TouchableOpacity onPress={onPressAvatar} disabled={!onPressAvatar}>
             <Avatar
               source={avatar}
-              size={48}
+              size={35}
               noShadow
               styles={
                 (styles && styles.avatar) || { container: { marginRight: 10 } }
